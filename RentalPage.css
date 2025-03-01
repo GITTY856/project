@@ -1,0 +1,402 @@
+/* Rental Page Container */
+.rental-page {
+    width: 100%;
+    background: transparent;
+    padding: 20px;
+}
+
+/* Search and Filters Section */
+.search-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-filters input,
+.search-filters select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    flex: 1;
+    min-width: 150px;
+}
+
+.search-filters button {
+    padding: 8px 16px;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.search-filters button:hover {
+    background-color: #FB8C00;
+    color: #1a1a1a;
+}
+
+/* Room Listings Section */
+.room-listings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Three cards in a row */
+    gap: 20px;
+    /* Space between cards */
+}
+
+/* Room Card */
+.room-card {
+    background: #FFD699;
+    /* White background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    /* Reduced padding */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Property Info (Image and Details Side-by-Side) */
+.property-info {
+    display: flex;
+    align-items: flex-start;
+    /* Align items to the top */
+    gap: 12px;
+    /* Smaller gap */
+    margin-bottom: 15px;
+    /* Reduced margin */
+}
+
+.property-info .img {
+    width: 100px;
+    /* Fixed width for the image */
+    height: 100px;
+    /* Fixed height for the image */
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    /* Prevent the image from shrinking */
+}
+
+.property-info .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensure the image covers the container */
+    border-radius: 10px;
+}
+
+.details {
+    flex: 1;
+}
+
+.details ul {
+    padding: 0;
+    margin: 0;
+}
+
+.details li {
+    list-style: none;
+    margin: 4px 0;
+    /* Smaller margin */
+    font-size: 13px;
+    /* Smaller font size */
+}
+
+/* Additional Details Below Image */
+.room-details h3 {
+    margin: 8px 0 4px;
+    /* Reduced margin */
+    font-size: 16px;
+    /* Smaller font size */
+    color: #222;
+}
+
+.room-details h5 {
+    margin: 8px 0 4px;
+    /* Reduced margin */
+    font-size: 14px;
+    /* Smaller font size */
+    color: #555;
+}
+
+.room-details p {
+    font-size: 13px;
+    /* Smaller font size */
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    /* Reduced margin */
+}
+
+.amenities {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #555;
+}
+
+.amenities strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    /* Smaller padding */
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    /* Smaller font size */
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #FB8C00;
+    color: #1a1a1a;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .room-listings {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two cards in a row for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .room-listings {
+        grid-template-columns: 1fr;
+        /* One card in a row for mobile */
+    }
+
+    .search-filters {
+        flex-direction: column;
+    }
+
+    .search-filters input,
+    .search-filters select,
+    .search-filters button {
+        width: 100%;
+    }
+
+    .property-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .property-info .img {
+        width: 100%;
+        height: 120px;
+        /* Adjusted height for mobile */
+    }
+
+    .room-card {
+        margin: 10px;
+        padding: 12px;
+        /* Smaller padding */
+    }
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 15px 30px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar .logo:hover {
+    color: #FB8C00;
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+/* Sliding Underline Animation */
+.navbar .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #FB8C00;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-links a:hover::after {
+    width: 100%;
+}
+
+.navbar .nav-links a:hover {
+    color: #FB8C00;
+}
+
+
+.navbar .auth-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .auth-links li {
+    margin-left: 20px;
+}
+
+.navbar .auth-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .auth-links a:hover {
+    background-color: #FB8C00;
+    color: #1a1a1a;
+}
+
+/* Profile Image Circle */
+.navbar .profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar .profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar .profile img:hover {
+    transform: scale(1.1);
+    border-color: #FB8C00;
+}
+
+/* Login/Signup Link */
+
+
+.navbar .auth-link:hover {
+    background-color: #FB8C00;
+    color: #1a1a1a;
+}
+
+/* Hamburger Menu for Mobile */
+.navbar .menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #FB8C00;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu-icon:hover {
+    color: #FB8C00;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+    .navbar .nav-links,
+    .navbar .auth-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #1a1a1a;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 0.5s ease;
+    }
+
+    .navbar .nav-links.active,
+    .navbar .auth-links.active {
+        display: flex;
+    }
+
+    .navbar .nav-links li,
+    .navbar .auth-links li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .navbar .menu-icon {
+        display: block;
+    }
+}
+
+/* Fade-In Animation for Mobile Menu */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
